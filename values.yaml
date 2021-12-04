@@ -1,4 +1,4 @@
-name: mysql-znLabs-${env.name}
+name: mysql-znlabs-${env.name}
 replicas: 1
 
 image: ${artifact.metadata.image}
