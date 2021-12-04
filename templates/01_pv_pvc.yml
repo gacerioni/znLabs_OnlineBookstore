@@ -5,7 +5,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: local-storage
+  storageClassName: standard
   capacity:
     storage: 1Gi
   accessModes:
@@ -18,7 +18,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mysql-znlabs-claim
 spec:
-  storageClassName: local-storage
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
