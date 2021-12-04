@@ -1,0 +1,23 @@
+name: mysql-znLabs-${env.name}
+replicas: 1
+
+image: ${artifact.metadata.image}
+
+createImagePullSecret: false
+
+createNamespace: true
+namespace: ${infra.kubernetes.namespace}
+
+# Service Type allow you to specify what kind of service you want.
+# Possible values for ServiceType are:
+# ClusterIP | NodePort | LoadBalancer | ExternalName
+serviceType: NodePort
+
+# A Service can map an incoming port to any targetPort.
+# targetPort is where application is listening on inside the container.
+servicePort: 3306
+serviceTargetPort: 3306
+
+# MySQL Secret Credentials
+mysqlUser: ${secrets.getValue("znLabs_mysql_user")}
+mysqlPWD: ${secrets.getValue("znLabs_mysql_pwd")}
