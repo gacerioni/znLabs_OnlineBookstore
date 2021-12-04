@@ -20,4 +20,5 @@ serviceTargetPort: 3306
 
 # MySQL Secret Credentials
 mysqlUser: ${secrets.getValue("znLabs_mysql_user")}
-mysqlPWD: ${secrets.getValue("znLabs_mysql_pwd")}
+#mysqlPWD: ${secrets.getValue("znLabs_mysql_pwd")}
+mysqlPWD: secret42
